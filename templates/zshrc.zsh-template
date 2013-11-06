@@ -44,4 +44,7 @@ plugins=(git git-extras gitfast github node npm rails rails3 web-search z sublim
 
 source $ZSH/oh-my-zsh.sh
 
+# Add `~/bin` to the `$PATH`
+export PATH="$HOME/bin:$PATH"
+
 # Customize to your needs...

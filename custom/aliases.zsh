@@ -8,8 +8,11 @@
 alias d="cd ~/Dropbox"
 alias sf="cd ~/Sites/swordfish"
 alias sfgk="cd ~/Sites/swordfish/js/lib/gaikai"
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 # Git
+alias g="git"
 alias gs="git status"
 alias gl="git log"
 alias gc="git commit -m"
@@ -36,6 +39,9 @@ alias evhosts="subl /private/etc/apache2/extra/httpd-vhosts.conf"
 
 # System
 alias rmdir="rm -rf"
+alias o="open"
+alias oo="open ."
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 # Terminal
 alias clr="clear"
