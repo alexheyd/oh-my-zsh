@@ -4,8 +4,15 @@
 # brainstormr=/Users/robbyrussell/Projects/development/planetargon/brainstormr
 #
 
+# fasd aliases
+alias e="a -e subl"
+
+# Edit ZSH Config
+alias ealias="subl ~/.oh-my-zsh/custom/aliases.zsh"
+alias ecfg="subl ~/.zshrc"
+
 # Navigation
-alias d="cd ~/Dropbox"
+alias h="cd ~"
 alias sf="cd ~/Sites/swordfish"
 alias sfgk="cd ~/Sites/swordfish/js/lib/gaikai"
 alias ....="cd ../../.."
@@ -21,6 +28,9 @@ alias ga="git add"
 alias gaa="git add . -A"
 alias gpu="git pull upstream"
 alias gpo="git pull origin"
+alias gfu="git fetch upstream"
+alias gfo="git fetch origin"
+alias grmbr="git branch -D"
 
 # Dotfiles
 alias src="source ~/.zshrc"
