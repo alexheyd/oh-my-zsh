@@ -16,10 +16,11 @@ eval my_orange='$FG[214]'
 eval my_red='%{$fg[red]%}'
 eval my_yellow='%{$fg[yellow]%}'
 eval my_blue='$FG[032]'
+eval myhost='$(hostname -f)'
 
 # primary prompt
 PROMPT='$my_gray=======================================================================================%{$reset_color%}
-$my_gray%n@$(hostname -f)%{$reset_color%} \
+$my_gray%n@$myhost%{$reset_color%} \
 $my_blue%~ \
 
 $FG[105]%(!.#.»)%{$reset_color%} '
