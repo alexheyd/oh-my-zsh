@@ -46,6 +46,7 @@ alias src="source ~/.zshrc"
 alias restart="sudo apachectl -e info -k restart"
 alias ehosts="subl /etc/hosts"
 alias evhosts="subl /private/etc/apache2/extra/httpd-vhosts.conf"
+alias ehttpdconf="subl /etc/apache2/httpd.conf"
 
 # System
 alias rmdir="rm -rf"
