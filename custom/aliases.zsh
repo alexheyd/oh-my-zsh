@@ -39,6 +39,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # Git
+alias git="hub"
 alias g="git"
 alias gs="git status"
 alias gl="git log"
