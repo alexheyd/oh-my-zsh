@@ -4,6 +4,14 @@
 # brainstormr=/Users/robbyrussell/Projects/development/planetargon/brainstormr
 #
 
+gpull(){
+	git pull $1 $(current_branch)
+}
+
+gpush(){
+	git pull $1 $(current_branch)
+}
+
 # fasd aliases
 alias e="a -e subl"
 
@@ -31,6 +39,9 @@ alias gpo="git pull origin"
 alias gfu="git fetch upstream"
 alias gfo="git fetch origin"
 alias grmbr="git branch -D"
+alias ggpusho='git push origin $(current_branch)'
+alias ggpushu='git push upstream $(current_branch)'
+
 
 # Dotfiles
 alias src="source ~/.zshrc"
@@ -59,4 +70,3 @@ alias clr="clear"
 
 # Exports
 export EDITOR="subl"
-
