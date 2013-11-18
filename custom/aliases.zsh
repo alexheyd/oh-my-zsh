@@ -51,8 +51,7 @@ alias gpo="git pull origin"
 alias gfu="git fetch upstream"
 alias gfo="git fetch origin"
 alias grmbr="git branch -D"
-alias ggpusho='git push origin $(current_branch)'
-alias ggpushu='git push upstream $(current_branch)'
+alias gbr="git co -b"
 
 
 # Dotfiles
