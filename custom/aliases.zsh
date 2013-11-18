@@ -21,7 +21,7 @@ gpush(){
 		repo='origin'
 	fi
 
-	git pull $repo $(current_branch)
+	git push $repo $(current_branch)
 }
 
 # fasd aliases
