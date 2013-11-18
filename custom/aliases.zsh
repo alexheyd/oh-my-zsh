@@ -5,11 +5,23 @@
 #
 
 gpull(){
-	git pull $1 $(current_branch)
+	repo=$1
+
+	if [ -z "$1" ]; then
+		repo='origin'
+	fi
+
+	git pull $repo $(current_branch)
 }
 
 gpush(){
-	git pull $1 $(current_branch)
+	repo=$1
+
+	if [ -z "$1" ]; then
+		repo='origin'
+	fi
+
+	git pull $repo $(current_branch)
 }
 
 # fasd aliases
