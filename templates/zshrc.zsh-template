@@ -40,13 +40,13 @@ alias ohmyzsh="subl ~/.oh-my-zsh"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras gitfast node npm rails rails3 web-search fasd sublime bower ruby osx brew alexgit)
+plugins=(git git-extras gitfast z sublime osx)
 
 source $ZSH/oh-my-zsh.sh
 
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH"
 
-eval "$(fasd --init auto)"
+# eval "$(fasd --init auto)"
 
 # Customize to your needs...

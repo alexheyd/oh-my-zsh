@@ -25,7 +25,7 @@ gpush(){
 }
 
 # fasd aliases
-alias e="a -e subl"
+# alias e="a -e subl"
 
 # Edit ZSH Config
 alias ealias="subl ~/.oh-my-zsh/custom/aliases.zsh"
@@ -39,7 +39,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # Git
-alias git="hub"
+# alias git="hub"
 alias g="git"
 alias gs="git status"
 alias gl="git log"
