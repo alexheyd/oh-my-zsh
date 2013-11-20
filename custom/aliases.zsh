@@ -24,6 +24,9 @@ gpush(){
 	git push $repo $(current_branch)
 }
 
+# Variables
+cbr="$(current_branch)"
+
 # fasd aliases
 # alias e="a -e subl"
 
