@@ -24,9 +24,6 @@ gpush(){
 	git push $repo $(current_branch)
 }
 
-# Variables
-cbr="$(current_branch)"
-
 # fasd aliases
 # alias e="a -e subl"
 
@@ -57,6 +54,7 @@ alias gfu="git fetch upstream"
 alias gfo="git fetch origin"
 alias grmbr="git branch -D"
 alias gbr="git co -b"
+alias cbr="current_branch"
 
 
 # Dotfiles
@@ -79,7 +77,7 @@ alias ehttpdconf="subl /etc/apache2/httpd.conf"
 alias rmdir="rm -rf"
 alias o="open"
 alias oo="open ."
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
+alias etrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl"
 
 # Terminal
 alias clr="clear"
