@@ -4,21 +4,23 @@
 # brainstormr=/Users/robbyrussell/Projects/development/planetargon/brainstormr
 #
 
-gpull(){
+gpl(){
 	repo=$1
 
 	if [ -z "$1" ]; then
-		repo='origin'
+		echo "git pull failed. Remote not specified."
+		return
 	fi
 
 	git pull $repo $(current_branch)
 }
 
-gpush(){
+gps(){
 	repo=$1
 
 	if [ -z "$1" ]; then
-		repo='origin'
+		echo "git pull failed. Remote not specified."
+		return
 	fi
 
 	git push $repo $(current_branch)
@@ -35,6 +37,7 @@ alias ecfg="subl ~/.zshrc"
 alias h="cd ~"
 alias sf="cd ~/Sites/swordfish"
 alias sfgk="cd ~/Sites/swordfish/js/lib/gaikai"
+alias gk="cd ~/Sites/gaikai.com"
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
@@ -43,18 +46,19 @@ alias .....="cd ../../../.."
 alias g="git"
 alias gs="git status"
 alias gss="git status -s"
-alias gl="git l"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gc="git commit -m"
 alias gca="git commit -a -m"
 alias ga="git add"
 alias gaa="git add . -A"
-alias gpu="git pull upstream"
-alias gpo="git pull origin"
 alias gfu="git fetch upstream"
 alias gfo="git fetch origin"
 alias grmbr="git branch -D"
 alias gbr="git co -b"
 alias cbr="current_branch"
+alias unstage="git reset"
+alias undoall="git reset --hard"
+alias rollback="git reset HEAD^"
 
 
 # Dotfiles
@@ -68,10 +72,12 @@ alias src="source ~/.zshrc"
 # alias eprompt="subl ~/.bash_prompt"
 
 # Apache
-alias restart="sudo apachectl -e info -k restart"
+alias restart_apache="sudo apachectl -e info -k restart"
+alias start_apache="sudo apachectl start"
+alias stop_apache="sudo apachectl stop"
 alias ehosts="subl /etc/hosts"
 alias evhosts="subl /private/etc/apache2/extra/httpd-vhosts.conf"
-alias ehttpdconf="subl /etc/apache2/httpd.conf"
+alias eapache="subl /etc/apache2/httpd.conf"
 
 # System
 alias rmdir="rm -rf"
