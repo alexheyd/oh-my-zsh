@@ -4,23 +4,21 @@
 # brainstormr=/Users/robbyrussell/Projects/development/planetargon/brainstormr
 #
 
-gpl(){
+gpull(){
 	repo=$1
 
 	if [ -z "$1" ]; then
-		echo "git pull failed. Remote not specified."
-		return
+		$repo="origin"
 	fi
 
 	git pull $repo $(current_branch)
 }
 
-gps(){
+gpush(){
 	repo=$1
 
 	if [ -z "$1" ]; then
-		echo "git pull failed. Remote not specified."
-		return
+		$repo="origin"
 	fi
 
 	git push $repo $(current_branch)
