@@ -8,7 +8,8 @@ gpull(){
 	repo=$1
 
 	if [ -z "$1" ]; then
-		$repo="origin"
+		repo="origin"
+
 	fi
 
 	git pull $repo $(current_branch)
@@ -18,7 +19,7 @@ gpush(){
 	repo=$1
 
 	if [ -z "$1" ]; then
-		$repo="origin"
+		repo="origin"
 	fi
 
 	git push $repo $(current_branch)
