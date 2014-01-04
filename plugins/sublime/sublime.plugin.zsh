@@ -8,22 +8,22 @@ _sublime_darwin_paths=(
 )
 
 if [[ $('uname') == 'Linux' ]]; then
-	if [ -f '/usr/bin/sublime_text' ]; then
-		st_run() { nohup /usr/bin/sublime_text $@ > /dev/null & }
-	else
-		st_run() { nohup /usr/bin/sublime-text $@ > /dev/null & }
-	fi
-	alias st=st_run
+    if [ -f '/usr/bin/sublime_text' ]; then
+        st_run() { nohup /usr/bin/sublime_text $@ > /dev/null & }
+    else
+        st_run() { nohup /usr/bin/sublime-text $@ > /dev/null & }
+    fi
+    alias st=st_run
 
 elif  [[ $('uname') == 'Darwin' ]]; then
 
-	for _sublime_path in $_sublime_darwin_paths; do
-		if [[ -a $_sublime_path ]]; then
-			alias subl="'$_sublime_path'"
-			alias st=subl
-			break
-		fi
-	done
+    for _sublime_path in $_sublime_darwin_paths; do
+        if [[ -a $_sublime_path ]]; then
+            alias subl="'$_sublime_path'"
+            alias st=subl
+            break
+        fi
+    done
 fi
 
 alias stt='st .'
