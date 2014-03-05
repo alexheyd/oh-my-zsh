@@ -28,6 +28,10 @@ gpush(){
 # fasd aliases
 # alias e="a -e subl"
 
+# Global Aliases
+alias -g L="|less" # Write L after a command to page through the output.
+alias -g TL='| tail -20'
+
 # Edit ZSH Config
 alias ealias="subl ~/.oh-my-zsh/custom/aliases.zsh"
 alias ecfg="subl ~/.zshrc"

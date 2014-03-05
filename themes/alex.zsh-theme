@@ -3,7 +3,7 @@
 # Author: Alex Heyd
 #
 # Created on:		Nov 5, 2013
-# Last modified on:	Nov 5, 2013
+# Last modified on:	Mar 4, 2014
 
 
 
@@ -20,19 +20,26 @@ eval myhost='$(hostname -f)'
 # eval myhost='%M'
 
 # primary prompt
-PROMPT='$my_gray=======================================================================================%{$reset_color%}
-$my_gray%n@$myhost%{$reset_color%} \
-$my_blue%~ \
+# PROMPT='$my_gray=======================================================================================%{$reset_color%}
+# $my_gray%n@$myhost%{$reset_color%} \
+# $my_blue%~ \
 
-$FG[105]%(!.#.»)%{$reset_color%} '
+# $FG[105]%(!.#.»)%{$reset_color%} '
+
+PROMPT='\
+
+%{$fg[cyan]%}%n@$myhost%{$reset_color%} \
+
+$my_blue%~$(git_prompt_info)
+$fg[cyan]%(!.#.»)%{$reset_color%} '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='${return_code}'
 
 # right prompt
-RPROMPT='$(git_prompt_info)'
+# RPROMPT='$(git_prompt_info)'
 
 # git settings
-ZSH_THEME_GIT_PROMPT_PREFIX="$my_blue(branch:$my_yellow"
+ZSH_THEME_GIT_PROMPT_PREFIX="$my_gray on%{$reset_color%} $my_orange"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_DIRTY="$my_red*%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="$my_blue)%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
