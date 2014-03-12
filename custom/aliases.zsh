@@ -4,7 +4,7 @@
 # brainstormr=/Users/robbyrussell/Projects/development/planetargon/brainstormr
 #
 
-gpull(){
+gpl(){
 	repo=$1
 
 	if [ -z "$1" ]; then
@@ -15,7 +15,7 @@ gpull(){
 	git pull $repo $(current_branch)
 }
 
-gpush(){
+gps(){
 	repo=$1
 
 	if [ -z "$1" ]; then
@@ -60,7 +60,10 @@ alias gbr="git co -b"
 alias cbr="current_branch"
 alias unstage="git reset"
 alias undoall="git reset --hard"
-alias rollback="git reset HEAD^"
+alias rollback="git reset --soft 'HEAD^'"
+alias gst="git stash"
+alias gstc="git stash clear"
+alias gsta="git stash apply"
 
 
 # Dotfiles
