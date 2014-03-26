@@ -9,7 +9,6 @@ gpl(){
 
 	if [ -z "$1" ]; then
 		repo="origin"
-
 	fi
 
 	git pull $repo $(current_branch)
@@ -23,6 +22,30 @@ gps(){
 	fi
 
 	git push $repo $(current_branch)
+}
+
+gmybr(){
+    if [ -z "$1" ]; then
+        echo "Branch feature name required."
+        return
+    fi
+
+    feature_name=$1
+    prefix=$2
+    suffix=$3
+    date=$(date +%Y%m%d)
+
+    if [ -z "$2" ]; then
+        prefix="dev"
+    fi
+
+    if [ -z "$3" ]; then
+        suffix="betaApp"
+    fi
+
+    branch_name="$prefix/gaikai.ah/$suffix/$date/$feature_name"
+
+    gbr $branch_name
 }
 
 # fasd aliases
