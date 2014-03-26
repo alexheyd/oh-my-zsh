@@ -24,6 +24,7 @@ gps(){
 	git push $repo $(current_branch)
 }
 
+# creates git branch name based on gaikai format (features/gaikai.ah/develop/20140101/featureName)
 gmybr(){
     if [ -z "$1" ]; then
         echo "Branch feature name required."
@@ -36,11 +37,11 @@ gmybr(){
     date=$(date +%Y%m%d)
 
     if [ -z "$2" ]; then
-        prefix="dev"
+        prefix="features"
     fi
 
     if [ -z "$3" ]; then
-        suffix="betaApp"
+        suffix="develop"
     fi
 
     branch_name="$prefix/gaikai.ah/$suffix/$date/$feature_name"
