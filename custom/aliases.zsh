@@ -52,6 +52,9 @@ gmybr(){
 # fasd aliases
 # alias e="a -e subl"
 
+# open Google Chrome with Web Security Disabled
+alias chr="open /Applications/Google\ Chrome.app --args --disable-web-security"
+
 # Global Aliases
 alias -g L="|less" # Write L after a command to page through the output.
 alias -g TL='| tail -20'
