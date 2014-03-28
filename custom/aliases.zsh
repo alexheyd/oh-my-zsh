@@ -46,14 +46,15 @@ gmybr(){
 
     branch_name="$prefix/gaikai.ah/$suffix/$date/$feature_name"
 
-    gbr $branch_name
+    git checkout -b $branch_name
 }
 
 # fasd aliases
 # alias e="a -e subl"
 
-# open Google Chrome with Web Security Disabled
+# (Gaikai Specific) open Google Chrome with Web Security Disabled
 alias chr="open /Applications/Google\ Chrome.app --args --disable-web-security"
+alias swfstatic="static --cache 1 --port 9999"
 
 # Global Aliases
 alias -g L="|less" # Write L after a command to page through the output.
