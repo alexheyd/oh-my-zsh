@@ -48,7 +48,7 @@ DISABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # plugins=(git git-extras gitfast z osx addvhost history-substring-search history)
-plugins=(gitfast z osx addvhost history-substring-search history)
+plugins=(git alexgit z osx addvhost history-substring-search history)
 
 autoload zmv
 

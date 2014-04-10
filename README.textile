@@ -1,3 +1,13 @@
 Personal fork of Oh-My-ZSH (custom theme, aliases, plugins).
 
+Custom theme and aliases.
+
 "Original Oh-My-ZSH project page":https://github.com/robbyrussell/oh-my-zsh
+
+```
+    $ git clone git@github.com:alexheyd/oh-my-zsh.git ~/.oh-my-zsh
+    $ ln -s ~/.oh-my-zsh ~/.zshrc
+    $ chsh -s /bin/zsh
+```
+
+Restart Terminal.

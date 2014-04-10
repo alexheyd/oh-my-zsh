@@ -4,53 +4,8 @@
 # brainstormr=/Users/robbyrussell/Projects/development/planetargon/brainstormr
 #
 
-gpl(){
-	repo=$1
-
-	if [ -z "$1" ]; then
-		repo="origin"
-	fi
-
-	git pull $repo $(current_branch)
-}
-
-gps(){
-	repo=$1
-
-	if [ -z "$1" ]; then
-		repo="origin"
-	fi
-
-	git push $repo $(current_branch)
-}
-
-# creates git branch name based on gaikai format (features/gaikai.ah/develop/20140101/featureName)
-gmybr(){
-    if [ -z "$1" ]; then
-        echo "Branch feature name required."
-        return
-    fi
-
-    feature_name=$1
-    prefix=$2
-    suffix=$3
-    date=$(date +%Y%m%d)
-
-    if [ -z "$2" ]; then
-        prefix="features"
-    fi
-
-    if [ -z "$3" ]; then
-        suffix="develop"
-    fi
-
-    branch_name="$prefix/gaikai.ah/$suffix/$date/$feature_name"
-
-    git checkout -b $branch_name
-}
-
-# fasd aliases
-# alias e="a -e subl"
+# Exports
+export EDITOR="subl"
 
 # (Gaikai Specific) open Google Chrome with Web Security Disabled
 alias chr="open /Applications/Google\ Chrome.app --args --disable-web-security"
@@ -94,6 +49,8 @@ alias rollback="git reset --soft 'HEAD^'"
 alias gst="git stash"
 alias gstc="git stash clear"
 alias gsta="git stash apply"
+alias undopush="git push -f origin HEAD^:master"
+alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`' # git root
 
 
 # Dotfiles
@@ -123,5 +80,39 @@ alias etrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -
 # Terminal
 alias clr="clear"
 
-# Exports
-export EDITOR="subl"
+# `cat` with beautiful colors. requires Pygments installed.
+#                              sudo easy_install Pygments
+alias c="pygmentize -O style=twilight -f console256 -g"
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en1"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print $1'"
+
+# Enhanced WHOIS lookups
+alias whois="whois -h whois-servers.net"
+
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache"
+
+# Trim new lines and copy to clipboard
+alias trimcopy="tr -d '\n' | pbcopy"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -name '*.DS_Store' -type f -ls -delete"
+
+# File size
+alias fs="stat -f \"%z bytes\""
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+
+# PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
+alias plistbuddy="/usr/libexec/PlistBuddy"
+
+# One of @janmoesen’s ProTip™s
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+    alias "$method"="lwp-request -m '$method'"
+done
